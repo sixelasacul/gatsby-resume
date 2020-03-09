@@ -1,0 +1,21 @@
+[
+    {
+        "firstname": "Alexis",
+        "lastname": "Lucas",
+        "birthdate": "24/10/1997",
+        "emailAddress": "alexis.lucas1@viacesi.fr",
+        "phoneNumber": "",
+        "nationality": "french",
+        "residence": "Dublin, Ireland",
+        "links": [
+            {
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/in/sixelasacul/"
+            },
+            {
+                "name": "GitHub",
+                "url": "https://github.com/sixelasacul/"
+            }
+        ]
+    }
+]

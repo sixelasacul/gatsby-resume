@@ -1,0 +1,19 @@
+[
+    {
+        "category": "Test",
+        "skills": [
+            {
+                "name": "test",
+                "order": 0
+            },
+            {
+                "name": "test2",
+                "order": 2
+            },
+            {
+                "name": "test3",
+                "order": 1
+            }
+        ]
+    }
+]

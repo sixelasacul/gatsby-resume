@@ -1,0 +1,68 @@
+[
+    {
+        "slug": "e-partenaire",
+        "name": "E-partenaire",
+        "type": "Stage",
+        "startDate": "01/09/2016",
+        "endDate": "01/11/2016",
+        "link": "https://agence-web-aix-en-provence.fr/",
+        "keywords": [],
+        "shortDescription": "ddd",
+        "description": "ddddddddddd\\nddddddd"
+    },
+    {
+        "slug": "altereo",
+        "name": "Altereo",
+        "type": "Stage",
+        "startDate": "01/04/2017",
+        "endDate": "01/07/2017",
+        "link": "http://altereo.fr/",
+        "keywords": [],
+        "shortDescription": "ddd",
+        "description": "ddddddddddd\\nddddddd"
+    },
+    {
+        "slug": "exakis-1",
+        "name": "Exakis Nelite",
+        "type": "Stage",
+        "startDate": "01/01/2018",
+        "endDate": "01/05/2018",
+        "link": "https://www.exakis-nelite.com/",
+        "keywords": [],
+        "shortDescription": "ddd",
+        "description": "ddddddddddd\\nddddddd"
+    },
+    {
+        "slug": "exakis-2",
+        "name": "Exakis",
+        "type": "CDD",
+        "startDate": "01/07/2018",
+        "endDate": "01/09/2018",
+        "link": "https://www.exakis-nelite.com/",
+        "keywords": [],
+        "shortDescription": "ddd",
+        "description": "ddddddddddd\\nddddddd"
+    },
+    {
+        "slug": "toast-1",
+        "name": "Toast, Inc.",
+        "type": "Stage",
+        "startDate": "01/10/2018",
+        "endDate": "01/02/2019",
+        "link": "https://pos.toasttab.com/",
+        "keywords": [],
+        "shortDescription": "ddd",
+        "description": "ddddddddddd\\nddddddd"
+    },
+    {
+        "slug": "toast-2",
+        "name": "Toast, Inc.",
+        "type": "Stage",
+        "startDate": "01/02/2018",
+        "endDate": "",
+        "link": "https://pos.toasttab.com/",
+        "keywords": [],
+        "shortDescription": "ddd",
+        "description": "ddddddddddd\\nddddddd"
+    }
+]
