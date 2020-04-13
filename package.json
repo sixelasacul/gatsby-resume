@@ -10,7 +10,8 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint src/**/*.jsx"
   },
   "dependencies": {
     "gatsby": "^2.19.7",
@@ -20,7 +21,11 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "gatsby-plugin-eslint": "^2.0.8",
+    "prettier": "^2.0.4",
+    "tailwindcss": "^1.2.0"
   },
   "repository": {
     "type": "git",

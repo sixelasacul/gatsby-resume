@@ -1,0 +1,1 @@
+export const sortSkillsByOrderNumber = (s1, s2) => s1.order - s2.order
