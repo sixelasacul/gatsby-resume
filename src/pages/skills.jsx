@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import SkillsCategoriesList from "../components/SkillsCategoriesList";
 
 const Skills = ({ data }) => (
-	<SkillsCategoriesList experiences={data.allSkills.nodes} />
+	<SkillsCategoriesList skillsCategories={data.allSkills.nodes} />
 );
 
 Skills.propTypes = {
