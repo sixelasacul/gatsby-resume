@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Experience from "./Experience";
+import { sortByStartDate } from "../utils/sorts";
 
 const ExperiencesList = ({ experiences }) =>
-	experiences.map((experience, index) => (
+	experiences.sort(sortByStartDate).map((experience, index) => (
 		<>
 			<Experience experience={experience} />
 			{index < experiences.length - 1 && <hr />}

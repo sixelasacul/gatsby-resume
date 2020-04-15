@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import { prettyPrintDate } from "../utils/dates";
 
 const Education = ({ education, fullView = false }) => {
 	const {
@@ -14,6 +15,7 @@ const Education = ({ education, fullView = false }) => {
 		description,
 		shortDescription
 	} = education;
+
 	return (
 		<div>
 			<h1>{qualification}</h1>
@@ -22,7 +24,7 @@ const Education = ({ education, fullView = false }) => {
 			</h2>
 			<h3>{type}</h3>
 			<h6>
-				{startDate} - {endDate}
+				{prettyPrintDate(startDate)} - {prettyPrintDate(endDate)}
 			</h6>
 			<p>{fullView ? description : shortDescription}</p>
 			{!fullView && <Link to={`/educations/${slug}`}>More</Link>}

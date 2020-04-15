@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Education from "./Education";
+import { sortByStartDate } from "../utils/sorts";
 
 const EducationsList = ({ educations }) =>
-	educations.map((education, index) => (
+	educations.sort(sortByStartDate).map((education, index) => (
 		<>
 			<Education education={education} />
 			{index < educations.length - 1 && <hr />}

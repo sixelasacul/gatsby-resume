@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { sortSkillsByOrderNumber } from "../utils/sortSkills";
+import { sortByOrderNumber } from "../utils/sorts";
 
 const SkillsCategory = ({ category, skills }) => (
 	<>
 		<p>{category}</p>
 		<p>
 			{skills
-				.sort(sortSkillsByOrderNumber)
+				.sort(sortByOrderNumber)
 				.map((skill) => skill.name)
 				.join(", ")}
 		</p>
