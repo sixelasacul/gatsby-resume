@@ -1,27 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { FluidObject } from "gatsby-image";
+
 import { Information } from "../components/business/Information";
 import { ExperiencesList } from "../components/business/ExperiencesList";
 import { SkillsCategoriesList } from "../components/business/SkillsCategoriesList";
 import { EducationsList } from "../components/business/EducationsList";
-import { PageContainer } from "../components/styled/PageContainer";
+import { Page } from "../components/styled/Page";
+import { SectionSeparator } from "../components/styled/Separators";
 
 const Home = ({ data }) => {
 	const { information, allExperiences, allSkills, allEducations } = data;
 	return (
-		<PageContainer>
-			<Information information={information} />
-			<hr />
-			<hr />
+		<Page>
+			<Information
+				information={information}
+				profilePic={data.file.childImageSharp.fluid}
+			/>
 			<ExperiencesList experiences={allExperiences.nodes} />
-			<hr />
-			<hr />
+			<SectionSeparator />
 			<SkillsCategoriesList skillsCategories={allSkills.nodes} />
-			<hr />
-			<hr />
+			<SectionSeparator />
 			<EducationsList educations={allEducations.nodes} />
-		</PageContainer>
+		</Page>
 	);
 };
 
@@ -36,6 +38,11 @@ Home.propTypes = {
 		}).isRequired,
 		allEducations: PropTypes.shape({
 			nodes: PropTypes.array.isRequired
+		}).isRequired,
+		file: PropTypes.shape({
+			childImageSharp: PropTypes.shape({
+				fluid: PropTypes.instanceOf(FluidObject).isRequired
+			}).isRequired
 		}).isRequired
 	}).isRequired
 };
@@ -85,6 +92,13 @@ export const query = graphql`
 				startDate
 				type
 				qualification
+			}
+		}
+		file(relativePath: { eq: "head.jpg" }) {
+			childImageSharp {
+				fluid {
+					...GatsbyImageSharpFluid
+				}
 			}
 		}
 	}

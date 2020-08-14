@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+
 import { prettyPrintDate } from "../../../utils/dates";
-import { CardContainer } from "../../styled/CardContainer";
+import { Card } from "../../styled/Card";
 
 export const Experience = ({ experience, fullView = false }) => {
 	const {
@@ -17,7 +18,7 @@ export const Experience = ({ experience, fullView = false }) => {
 	} = experience;
 
 	return (
-		<CardContainer>
+		<Card>
 			<h1>
 				<a href={link}>{name}</a>
 			</h1>
@@ -27,14 +28,14 @@ export const Experience = ({ experience, fullView = false }) => {
 			</h6>
 			<p>{fullView ? description : shortDescription}</p>
 			{!fullView && <Link to={`/experiences/${slug}`}>More</Link>}
-		</CardContainer>
+		</Card>
 	);
 };
 
 Experience.propTypes = {
 	fullView: PropTypes.bool,
 	experience: PropTypes.shape({
-		slug: PropTypes.number,
+		slug: PropTypes.string.isRequired,
 		name: PropTypes.string.isRequired,
 		type: PropTypes.string.isRequired,
 		link: PropTypes.string.isRequired,

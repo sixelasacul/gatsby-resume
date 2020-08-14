@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FluidObject } from "gatsby-image";
 
-export const Information = ({ information }) => {
+import { Header } from "../../styled/Header";
+
+export const Information = ({ information, profilePic }) => {
 	const {
 		firstname,
 		lastname,
@@ -14,19 +17,27 @@ export const Information = ({ information }) => {
 	} = information;
 	return (
 		<>
-			<p>{firstname + "  " + lastname}</p>
-			<p>{birthdate}</p>
-			<p>{emailAddress}</p>
-			<p>{phoneNumber}</p>
-			<p>{nationality}</p>
-			<p>{residence}</p>
-			<>
-				{links.map((link, index) => (
-					<a href={link.url} key={index}>
-						{link.name}
-					</a>
-				))}
-			</>
+			<Header imgFluid={profilePic}>
+				<Header.Left>
+					<h2>{firstname + "  " + lastname}</h2>
+					<p>{nationality}</p>
+					<p>{birthdate}</p>
+					<p>{residence}</p>
+				</Header.Left>
+				<Header.Right>
+					<p>{emailAddress}</p>
+					<p>{phoneNumber}</p>
+					<>
+						{links.map((link, index) => (
+							<p key={link}>
+								<a href={link.url} key={index}>
+									{link.name}
+								</a>
+							</p>
+						))}
+					</>
+				</Header.Right>
+			</Header>
 		</>
 	);
 };
@@ -44,5 +55,6 @@ Information.propTypes = {
 			name: PropTypes.string.isRequired,
 			url: PropTypes.string.isRequired
 		}).isRequired
-	}).isRequired
+	}).isRequired,
+	profilePic: PropTypes.instanceOf(FluidObject).isRequired
 };

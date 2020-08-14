@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { sortByOrderNumber } from "../../../utils/sorts";
-import { CardContainer } from "../../styled/CardContainer";
+import { Card } from "../../styled/Card";
 
 export const SkillsCategory = ({ category, skills }) => (
-	<CardContainer>
+	<Card>
 		<p>{category}</p>
 		<p>
 			{skills
@@ -12,7 +13,7 @@ export const SkillsCategory = ({ category, skills }) => (
 				.map((skill) => skill.name)
 				.join(", ")}
 		</p>
-	</CardContainer>
+	</Card>
 );
 
 SkillsCategory.propTypes = {

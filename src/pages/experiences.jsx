@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+
 import { ExperiencesList } from "../components/business/ExperiencesList";
 
 const Experiences = ({ data }) => (

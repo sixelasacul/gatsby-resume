@@ -3,14 +3,15 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import tw from "twin.macro";
 
+import { withChildren } from "../../shapes/withChildren";
+
 export const LeadPosition = Object.freeze({
 	LEFT: "left",
 	RIGHT: "right"
 });
 
 const CardBackground = styled.div`
-	box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.1);
-	${tw`bg-white rounded-lg flex flex-row m-4`}
+	${tw`bg-white rounded-lg flex flex-row m-4 flat-shadow-r`}
 `;
 
 const CardLead = styled.div`
@@ -21,20 +22,14 @@ const CardContent = styled.div`
 	${tw`p-4`}
 `;
 
-export const CardContainer = ({
-	leadPosition = LeadPosition.LEFT,
-	children
-}) => (
+export const Card = ({ leadPosition = LeadPosition.LEFT, children }) => (
 	<CardBackground leadPosition={leadPosition}>
 		<CardLead leadPosition={leadPosition} />
 		<CardContent>{children}</CardContent>
 	</CardBackground>
 );
 
-CardContainer.propTypes = {
-	leadPosition: PropTypes.oneOf(Object.values(LeadPosition)),
-	children: PropTypes.oneOfType([
-		PropTypes.node,
-		PropTypes.arrayOf(PropTypes.node)
-	]).isRequired
+Card.propTypes = {
+	...withChildren,
+	leadPosition: PropTypes.oneOf(Object.values(LeadPosition))
 };

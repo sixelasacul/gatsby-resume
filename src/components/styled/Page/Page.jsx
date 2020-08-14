@@ -1,7 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import tw from "twin.macro";
+
+import { withChildren } from "../../shapes/withChildren";
 
 const Container = styled.div`
 	${tw`container mx-auto px-16`}
@@ -11,15 +12,10 @@ const Background = styled.div`
 	${tw`bg-gray-100`}
 `;
 
-export const PageContainer = ({ children }) => (
+export const Page = ({ children }) => (
 	<Background>
 		<Container>{children}</Container>
 	</Background>
 );
 
-PageContainer.propTypes = {
-	children: PropTypes.oneOfType([
-		PropTypes.node,
-		PropTypes.arrayOf(PropTypes.node)
-	]).isRequired
-};
+Page.propTypes = withChildren;

@@ -1,19 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { Education } from "../Education";
 import { sortByStartDate } from "../../../utils/sorts";
+import { ItemSeparator } from "../../styled/Separators";
 
 export const EducationsList = ({ educations }) =>
 	educations.sort(sortByStartDate).map((education, index) => (
-		<>
+		<div key={education.slug}>
 			<Education education={education} />
-			{index < educations.length - 1 && <hr />}
-		</>
+			{index < educations.length - 1 && <ItemSeparator />}
+		</div>
 	));
 
 EducationsList.propTypes = {
 	educations: PropTypes.arrayOf({
-		slug: PropTypes.number,
+		slug: PropTypes.string.isRequired,
 		name: PropTypes.string.isRequired,
 		type: PropTypes.string.isRequired,
 		qualification: PropTypes.string.isRequired,

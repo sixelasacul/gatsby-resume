@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+
 import { Education } from "../components/business/Education";
 
 const EducationTemplate = ({ data }) => (

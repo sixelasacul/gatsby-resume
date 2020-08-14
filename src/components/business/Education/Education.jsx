@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 import { prettyPrintDate } from "../../../utils/dates";
-import { CardContainer } from "../../styled/CardContainer";
+import { Card } from "../../styled/Card";
 
 export const Education = ({ education, fullView = false }) => {
 	const {
@@ -19,7 +19,7 @@ export const Education = ({ education, fullView = false }) => {
 	} = education;
 
 	return (
-		<CardContainer>
+		<Card>
 			<h1>{qualification}</h1>
 			<h2>
 				<a href={link}>{name}</a>
@@ -30,14 +30,14 @@ export const Education = ({ education, fullView = false }) => {
 			</h6>
 			<p>{fullView ? description : shortDescription}</p>
 			{!fullView && <Link to={`/educations/${slug}`}>More</Link>}
-		</CardContainer>
+		</Card>
 	);
 };
 
 Education.propTypes = {
 	fullView: PropTypes.bool,
 	education: PropTypes.shape({
-		slug: PropTypes.number,
+		slug: PropTypes.string.isRequired,
 		name: PropTypes.string.isRequired,
 		type: PropTypes.string.isRequired,
 		qualification: PropTypes.string.isRequired,
