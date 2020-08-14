@@ -1,7 +1,20 @@
 {
+  "env": {
+    "browser": true
+  },
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "plugins": ["react", "prettier"],
   "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
   "rules": {
     "prettier/prettier": "error",
     "quotes": ["error", "double"],
@@ -9,5 +22,15 @@
     "indent": ["error", "tab"],
     "max-len": ["error", { "code": 80 }],
     "comma-dangle": ["error", "never"]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "./*.js"
+      ],
+      "env": {
+        "node": true
+      }
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import Experience from "../components/Experience";
+import { Experience } from "../components/business/Experience";
 
 const ExperienceTemplate = ({ data }) => (
 	<Experience experience={data.experiences} fullView />

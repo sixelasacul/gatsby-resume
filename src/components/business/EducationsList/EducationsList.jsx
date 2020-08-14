@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Education from "./Education";
-import { sortByStartDate } from "../utils/sorts";
+import { Education } from "../Education";
+import { sortByStartDate } from "../../../utils/sorts";
 
-const EducationsList = ({ educations }) =>
+export const EducationsList = ({ educations }) =>
 	educations.sort(sortByStartDate).map((education, index) => (
 		<>
 			<Education education={education} />
@@ -24,5 +24,3 @@ EducationsList.propTypes = {
 		shortDescription: PropTypes.string
 	}).isRequired
 };
-
-export default EducationsList;

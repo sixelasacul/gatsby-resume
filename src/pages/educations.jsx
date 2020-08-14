@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import EducationsList from "../components/EducationsList";
+import { EducationsList } from "../components/business/EducationsList";
 
 const Educations = ({ data }) => (
 	<EducationsList educations={data.allEducations.nodes} />

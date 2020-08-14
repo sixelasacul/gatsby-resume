@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SkillsCategory from "./SkillsCategory";
+import { SkillsCategory } from "../SkillsCategory";
 
-const SkillsCategoriesList = ({ skillsCategories }) => (
+export const SkillsCategoriesList = ({ skillsCategories }) => (
 	<>
 		{skillsCategories.map((item, index) => (
 			<SkillsCategory
@@ -20,5 +20,3 @@ SkillsCategoriesList.propTypes = {
 		skills: PropTypes.array.isRequired
 	}).isRequired
 };
-
-export default SkillsCategoriesList;

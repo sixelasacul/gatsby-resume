@@ -6,4 +6,5 @@ const lang = "en";
 
 dayjs.locale(lang);
 
-export const prettyPrintDate = date => date ? dayjs(date).format("MMMM YYYY") : "Now";
+export const prettyPrintDate = (date) =>
+	date ? dayjs(date).format("MMMM YYYY") : "Now";

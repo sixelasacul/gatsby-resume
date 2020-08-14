@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Information = ({ information }) => {
+export const Information = ({ information }) => {
 	const {
 		firstname,
 		lastname,
@@ -46,5 +46,3 @@ Information.propTypes = {
 		}).isRequired
 	}).isRequired
 };
-
-export default Information;

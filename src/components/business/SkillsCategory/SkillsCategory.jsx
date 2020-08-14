@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { sortByOrderNumber } from "../utils/sorts";
+import { sortByOrderNumber } from "../../../utils/sorts";
+import { CardContainer } from "../../styled/CardContainer";
 
-const SkillsCategory = ({ category, skills }) => (
-	<>
+export const SkillsCategory = ({ category, skills }) => (
+	<CardContainer>
 		<p>{category}</p>
 		<p>
 			{skills
@@ -11,7 +12,7 @@ const SkillsCategory = ({ category, skills }) => (
 				.map((skill) => skill.name)
 				.join(", ")}
 		</p>
-	</>
+	</CardContainer>
 );
 
 SkillsCategory.propTypes = {
@@ -21,5 +22,3 @@ SkillsCategory.propTypes = {
 		order: PropTypes.number.isRequired
 	}).isRequired
 };
-
-export default SkillsCategory;

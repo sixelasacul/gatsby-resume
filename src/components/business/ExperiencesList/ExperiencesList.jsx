@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Experience from "./Experience";
-import { sortByStartDate } from "../utils/sorts";
+import { Experience } from "../Experience";
+import { sortByStartDate } from "../../../utils/sorts";
 
-const ExperiencesList = ({ experiences }) =>
+export const ExperiencesList = ({ experiences }) =>
 	experiences.sort(sortByStartDate).map((experience, index) => (
 		<>
 			<Experience experience={experience} />
@@ -23,5 +23,3 @@ ExperiencesList.propTypes = {
 		shortDescription: PropTypes.string
 	}).isRequired
 };
-
-export default ExperiencesList;

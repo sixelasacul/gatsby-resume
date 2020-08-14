@@ -1,44 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import { prettyPrintDate } from "../utils/dates";
+import { prettyPrintDate } from "../../../utils/dates";
+import { CardContainer } from "../../styled/CardContainer";
 
-const Education = ({ education, fullView = false }) => {
+export const Experience = ({ experience, fullView = false }) => {
 	const {
 		slug,
 		name,
 		type,
-		qualification,
+		link,
 		startDate,
 		endDate,
-		link,
 		description,
 		shortDescription
-	} = education;
+	} = experience;
 
 	return (
-		<div>
-			<h1>{qualification}</h1>
-			<h2>
+		<CardContainer>
+			<h1>
 				<a href={link}>{name}</a>
-			</h2>
+			</h1>
 			<h3>{type}</h3>
 			<h6>
 				{prettyPrintDate(startDate)} - {prettyPrintDate(endDate)}
 			</h6>
 			<p>{fullView ? description : shortDescription}</p>
-			{!fullView && <Link to={`/educations/${slug}`}>More</Link>}
-		</div>
+			{!fullView && <Link to={`/experiences/${slug}`}>More</Link>}
+		</CardContainer>
 	);
 };
 
-Education.propTypes = {
+Experience.propTypes = {
 	fullView: PropTypes.bool,
-	education: PropTypes.shape({
+	experience: PropTypes.shape({
 		slug: PropTypes.number,
 		name: PropTypes.string.isRequired,
 		type: PropTypes.string.isRequired,
-		qualification: PropTypes.string.isRequired,
 		link: PropTypes.string.isRequired,
 		startDate: PropTypes.string.isRequired,
 		endDate: PropTypes.string.isRequired,
@@ -46,5 +44,3 @@ Education.propTypes = {
 		shortDescription: PropTypes.string
 	}).isRequired
 };
-
-export default Education;
