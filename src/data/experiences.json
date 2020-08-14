@@ -59,6 +59,17 @@
         "name": "Toast, Inc.",
         "type": "Stage",
         "startDate": "01/02/2020",
+        "endDate": "24/07/2020",
+        "link": "https://pos.toasttab.com/",
+        "keywords": [],
+        "shortDescription": "ddd",
+        "description": "ddddddddddd\\nddddddd"
+    },
+    {
+        "slug": "toast-3",
+        "name": "Toast, Inc.",
+        "type": "CDI",
+        "startDate": "27/07/2020",
         "endDate": "",
         "link": "https://pos.toasttab.com/",
         "keywords": [],
