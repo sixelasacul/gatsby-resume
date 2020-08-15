@@ -5,7 +5,7 @@ import tw from "twin.macro";
 import { withChildren } from "../../shapes/withChildren";
 
 const Container = styled.div`
-	${tw`container mx-auto px-16`}
+	${tw`container mx-auto p-2 md:px-16`}
 `;
 
 const Background = styled.div`

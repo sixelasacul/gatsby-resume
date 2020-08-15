@@ -6,21 +6,23 @@ import Img, { FluidObject } from "gatsby-image";
 
 export const Left = styled.div`
 	flex-basis: 40%;
-	${tw`mr-auto`}
+	${tw`sm:mr-auto sm:text-left text-right`}
 `;
 
 export const Right = styled.div`
 	flex-basis: 40%;
-	${tw`ml-auto text-right`}
+	${tw`sm:ml-auto text-right`}
 `;
 
 const LogoContainer = styled.div`
-	@media (min-width: 768px) {
+	inset: calc(50% - 4rem) auto auto 1rem;
+	@media (min-width: 640px) {
 		inset: 50% auto auto calc(50% - 5rem);
 	}
 	${tw`
-        bg-white rounded-full w-20 h-20 p-2 self-center
-        md:shadow-flat-r md:absolute md:w-40 md:h-40 md:p-4
+		absolute
+        bg-white rounded-full w-32 h-32 p-2
+        sm:shadow-flat-r sm:w-40 sm:h-40 sm:p-4
     `};
 `;
 
@@ -29,8 +31,12 @@ const Logo = styled(Img)`
 `;
 
 const Background = styled.div`
-	${tw`bg-blue-500 shadow-flat-r h-40 rounded-lg relative mb-24
-    flex justify-start p-4 text-gray-100`}
+	min-height: 10rem;
+	${tw`
+		bg-blue-500 shadow-flat-r rounded-lg relative
+		flex p-4 text-gray-100 flex-col mb-10 justify-start items-end
+		sm:flex-row sm:mb-24 sm:items-start
+	`}
 `;
 
 export const Header = ({ children, imgFluid }) => (
