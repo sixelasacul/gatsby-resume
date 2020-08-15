@@ -13,8 +13,10 @@ export const SkillsCategoriesList = ({ skillsCategories }) =>
 	));
 
 SkillsCategoriesList.propTypes = {
-	skillsCategories: PropTypes.arrayOf({
-		category: PropTypes.string.isRequired,
-		skills: PropTypes.array.isRequired
-	}).isRequired
+	skillsCategories: PropTypes.arrayOf(
+		PropTypes.shape({
+			category: PropTypes.string.isRequired,
+			skills: PropTypes.array.isRequired
+		})
+	).isRequired
 };

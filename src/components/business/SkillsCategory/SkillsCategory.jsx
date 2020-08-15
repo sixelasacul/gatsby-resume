@@ -18,8 +18,10 @@ export const SkillsCategory = ({ category, skills }) => (
 
 SkillsCategory.propTypes = {
 	category: PropTypes.string.isRequired,
-	skills: PropTypes.arrayOf({
-		name: PropTypes.string.isRequired,
-		order: PropTypes.number.isRequired
-	}).isRequired
+	skills: PropTypes.arrayOf(
+		PropTypes.shape({
+			name: PropTypes.string.isRequired,
+			order: PropTypes.number.isRequired
+		})
+	).isRequired
 };

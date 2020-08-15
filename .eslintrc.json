@@ -1,49 +1,65 @@
 {
-  "env": {
-    "browser": true
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "plugins": ["react", "prettier", "import"],
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:import/errors", "plugin:import/warnings", "plugin:import/react"],
-  "settings": {
-    "react": {
-      "version": "latest"
-    },
-    "import/resolver": {
-      "node": {
-        "extensions": [".js",".jsx"]
-       }
-    }
-  },
-  "rules": {
-    "prettier/prettier": "error",
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"],
-    "indent": ["error", "tab"],
-    "max-len": ["error", { "code": 80 }],
-    "comma-dangle": ["error", "never"],
-    "import/order": ["error", {
-        "groups": [
-          ["builtin", "external"],
-          ["internal", "parent", "sibling", "index"]
-        ],
-        "newlines-between": "always"
-      }
-    ]
-  },
-  "overrides": [
-    {
-      "files": [
-        "./*.js"
-      ],
-      "env": {
-        "node": true
-      }
-    }
-  ]
+	"env": {
+		"browser": true
+	},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["react", "prettier", "import"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/react"
+	],
+	"settings": {
+		"react": {
+			"version": "latest"
+		},
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx"]
+			}
+		}
+	},
+	"rules": {
+		"prettier/prettier": "error",
+		"quotes": ["error", "double"],
+		"semi": ["error", "always"],
+		"indent": ["error", "tab"],
+		"max-len": [
+			"error",
+			{
+				"code": 80,
+				"tabWidth": 4,
+				"ignoreUrls": true,
+				"ignoreStrings": true,
+				"ignoreTemplateLiterals": true,
+				"ignoreRegExpLiterals": true
+			}
+		],
+		"comma-dangle": ["error", "never"],
+		"import/order": [
+			"error",
+			{
+				"groups": [
+					["builtin", "external"],
+					["internal", "parent", "sibling", "index"]
+				],
+				"newlines-between": "always"
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": ["./*.js"],
+			"env": {
+				"node": true
+			}
+		}
+	]
 }
