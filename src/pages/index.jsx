@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import { FluidObject } from "gatsby-image";
 
 import { Information } from "../components/business/Information";
 import { ExperiencesList } from "../components/business/ExperiencesList";
@@ -41,7 +40,7 @@ Home.propTypes = {
 		}).isRequired,
 		file: PropTypes.shape({
 			childImageSharp: PropTypes.shape({
-				fluid: PropTypes.instanceOf(FluidObject).isRequired
+				fluid: PropTypes.object.isRequired
 			}).isRequired
 		}).isRequired
 	}).isRequired

@@ -49,7 +49,7 @@ export const Header = ({ children, imgFluid }) => (
 );
 
 Header.propTypes = {
-	imgFluid: PropTypes.instanceOf(FluidObject).isRequired,
+	imgFluid: PropTypes.object.isRequired,
 	children: PropTypes.oneOfType([
 		(props, propName, componentName) => {
 			if (![Left, Right].includes(props[propName].type)) {

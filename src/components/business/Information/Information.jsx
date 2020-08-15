@@ -28,11 +28,9 @@ export const Information = ({ information, profilePic }) => {
 					<p>{emailAddress}</p>
 					<p>{phoneNumber}</p>
 					<>
-						{links.map((link, index) => (
-							<p key={link}>
-								<a href={link.url} key={index}>
-									{link.name}
-								</a>
+						{links.map((link) => (
+							<p key={link.name}>
+								<a href={link.url}>{link.name}</a>
 							</p>
 						))}
 					</>
@@ -51,10 +49,12 @@ Information.propTypes = {
 		phoneNumber: PropTypes.string.isRequired,
 		nationality: PropTypes.string.isRequired,
 		residence: PropTypes.string.isRequired,
-		links: PropTypes.arrayOf({
-			name: PropTypes.string.isRequired,
-			url: PropTypes.string.isRequired
-		}).isRequired
+		links: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string.isRequired,
+				url: PropTypes.string.isRequired
+			}).isRequired
+		).isRequired
 	}).isRequired,
-	profilePic: PropTypes.instanceOf(FluidObject).isRequired
+	profilePic: PropTypes.object.isRequired
 };

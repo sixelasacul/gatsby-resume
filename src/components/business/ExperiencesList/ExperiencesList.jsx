@@ -14,14 +14,16 @@ export const ExperiencesList = ({ experiences }) =>
 	));
 
 ExperiencesList.propTypes = {
-	experiences: PropTypes.arrayOf({
-		slug: PropTypes.string.isRequired,
-		name: PropTypes.string.isRequired,
-		type: PropTypes.string.isRequired,
-		link: PropTypes.string.isRequired,
-		startDate: PropTypes.string.isRequired,
-		endDate: PropTypes.string.isRequired,
-		description: PropTypes.string,
-		shortDescription: PropTypes.string
-	}).isRequired
+	experiences: PropTypes.arrayOf(
+		PropTypes.shape({
+			slug: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+			type: PropTypes.string.isRequired,
+			link: PropTypes.string.isRequired,
+			startDate: PropTypes.string.isRequired,
+			endDate: PropTypes.string.isRequired,
+			description: PropTypes.string,
+			shortDescription: PropTypes.string
+		})
+	).isRequired
 };
