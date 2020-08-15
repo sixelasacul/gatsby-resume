@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Img, { FluidObject } from "gatsby-image";
+import Img from "gatsby-image";
 
 export const Left = styled.div`
 	flex-basis: 40%;

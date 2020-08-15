@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FluidObject } from "gatsby-image";
 
 import { Header } from "../../styled/Header";
 

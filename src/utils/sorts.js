@@ -1,5 +1,3 @@
-import dayjs from "dayjs";
-
 import { parseDateFromData } from "./dates";
 
 export const sortByOrderNumber = (first, second) => first.order - second.order;
