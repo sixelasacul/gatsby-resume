@@ -7,6 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "dev:lan": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
