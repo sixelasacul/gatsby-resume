@@ -4,18 +4,17 @@ import PropTypes from "prop-types";
 import { Education } from "../Education";
 import { sortByStartDate } from "../../../utils/sorts";
 import { ItemSeparator } from "../../styled/Separators";
-import { SectionHeader } from "../../styled/SectionHeader";
+import { Section } from "../../styled/Section";
 
 export const EducationsList = ({ educations }) => (
-	<div>
-		<SectionHeader>Educations</SectionHeader>
+	<Section sectionTitle="Educations">
 		{educations.sort(sortByStartDate).map((education, index) => (
 			<div key={education.slug}>
 				<Education education={education} />
 				{index < educations.length - 1 && <ItemSeparator />}
 			</div>
 		))}
-	</div>
+	</Section>
 );
 
 EducationsList.propTypes = {

@@ -4,18 +4,17 @@ import PropTypes from "prop-types";
 import { Experience } from "../Experience";
 import { sortByStartDate } from "../../../utils/sorts";
 import { ItemSeparator } from "../../styled/Separators";
-import { SectionHeader } from "../../styled/SectionHeader";
+import { Section } from "../../styled/Section";
 
 export const ExperiencesList = ({ experiences }) => (
-	<div>
-		<SectionHeader>Experiences</SectionHeader>
+	<Section sectionTitle="Experiences">
 		{experiences.sort(sortByStartDate).map((experience, index) => (
 			<div key={experience.slug}>
 				<Experience experience={experience} />
 				{index < experiences.length - 1 && <ItemSeparator />}
 			</div>
 		))}
-	</div>
+	</Section>
 );
 
 ExperiencesList.propTypes = {

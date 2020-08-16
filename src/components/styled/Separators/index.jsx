@@ -1,3 +1,3 @@
-import { ItemSeparator, SectionSeparator } from "./Separators";
+import { ItemSeparator } from "./Separators";
 
-export { ItemSeparator, SectionSeparator };
+export { ItemSeparator };
