@@ -5,7 +5,13 @@ import { graphql } from "gatsby";
 import { EducationsList } from "../components/business/EducationsList";
 
 const Educations = ({ data }) => (
-	<EducationsList educations={data.allEducations.nodes} />
+	<>
+		<h1>Educations</h1>
+		<EducationsList
+			educations={data.allEducations.nodes}
+			withHeader={false}
+		/>
+	</>
 );
 
 Educations.propTypes = {

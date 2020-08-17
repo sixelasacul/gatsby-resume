@@ -6,8 +6,12 @@ import { sortByStartDate } from "../../../utils/sorts";
 import { ItemSeparator } from "../../styled/Separators";
 import { Section } from "../../styled/Section";
 
-export const EducationsList = ({ educations }) => (
-	<Section sectionTitle="Educations">
+export const EducationsList = ({ educations, withHeader = true }) => (
+	<Section
+		withHeader={withHeader}
+		sectionTitle="Educations"
+		sectionLink="/educations"
+	>
 		{educations.sort(sortByStartDate).map((education, index) => (
 			<div key={education.slug}>
 				<Education education={education} />
@@ -30,5 +34,6 @@ EducationsList.propTypes = {
 			description: PropTypes.string,
 			shortDescription: PropTypes.string
 		})
-	).isRequired
+	).isRequired,
+	withHeader: PropTypes.bool
 };

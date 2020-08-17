@@ -18,6 +18,36 @@ const SectionTitle = styled.h2`
 		content: "";
 		width: 66%;
 		${tw`border border-solid border-blue-500 ml-1`}
+		animation-duration: 200ms;
+		animation-name: retractOnMouseOut;
+		animation-timing-function: ease-out;
+	}
+	&:hover::after {
+		width: 100%;
+		${tw`border-blue-400`}
+		animation-duration: 200ms;
+		animation-name: extendOnMouseOn;
+		animation-timing-function: ease-in;
+	}
+	@keyframes extendOnMouseOn {
+		from {
+			width: 66%;
+			${tw`border-blue-500`}
+		}
+		to {
+			width: 100%;
+			${tw`border-blue-400`}
+		}
+	}
+	@keyframes retractOnMouseOut {
+		from {
+			width: 100%;
+			${tw`border-blue-400`}
+		}
+		to {
+			width: 66%;
+			${tw`border-blue-500`}
+		}
 	}
 	display: flex;
 	flex-direction: column;
@@ -32,13 +62,22 @@ const SectionContainer = styled.div`
 	${tw`mx-4`}
 `;
 
-export const Section = ({ children, sectionTitle }) => (
+export const Section = ({
+	children,
+	withHeader,
+	sectionTitle,
+	sectionLink
+}) => (
 	<div>
-		<SectionHeader>
-			<SectionFlex>
-				<SectionTitle>{sectionTitle}</SectionTitle>
-			</SectionFlex>
-		</SectionHeader>
+		{withHeader && (
+			<SectionHeader>
+				<SectionFlex>
+					<SectionTitle>
+						<a href={sectionLink}>{sectionTitle}</a>
+					</SectionTitle>
+				</SectionFlex>
+			</SectionHeader>
+		)}
 		<SectionContainer>{children}</SectionContainer>
 		<SectionSeparator />
 	</div>
@@ -46,5 +85,7 @@ export const Section = ({ children, sectionTitle }) => (
 
 Section.propTypes = {
 	...withChildren,
-	sectionTitle: PropTypes.string.isRequired
+	withHeader: PropTypes.bool,
+	sectionTitle: PropTypes.string,
+	sectionLink: PropTypes.string
 };

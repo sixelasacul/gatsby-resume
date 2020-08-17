@@ -5,7 +5,13 @@ import { graphql } from "gatsby";
 import { ExperiencesList } from "../components/business/ExperiencesList";
 
 const Experiences = ({ data }) => (
-	<ExperiencesList experiences={data.allExperiences.nodes} />
+	<>
+		<h1>Experiences</h1>
+		<ExperiencesList
+			experiences={data.allExperiences.nodes}
+			withHeader={false}
+		/>
+	</>
 );
 
 Experiences.propTypes = {
