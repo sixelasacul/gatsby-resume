@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
 	purge: [],
 	theme: {
@@ -8,6 +10,11 @@ module.exports = {
 			},
 			inset: {
 				"1/2": "50%"
+			},
+			fontFamily: {
+				sans: ["Inter", ...defaultTheme.fontFamily.sans],
+				serif: ["Roboto Slab", ...defaultTheme.fontFamily.serif],
+				mono: ["Fira Code", ...defaultTheme.fontFamily.mono]
 			}
 		}
 	},
