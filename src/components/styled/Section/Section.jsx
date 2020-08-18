@@ -72,9 +72,12 @@ export const Section = ({
 		{withHeader && (
 			<SectionHeader>
 				<SectionFlex>
-					<SectionTitle>
-						<a href={sectionLink}>{sectionTitle}</a>
-					</SectionTitle>
+					<a
+						href={sectionLink}
+						title={`Show only ${sectionTitle.toLowerCase()}`}
+					>
+						<SectionTitle>{sectionTitle}</SectionTitle>
+					</a>
 				</SectionFlex>
 			</SectionHeader>
 		)}
