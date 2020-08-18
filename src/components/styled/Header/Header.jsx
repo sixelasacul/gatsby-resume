@@ -15,9 +15,11 @@ export const Right = styled.div`
 `;
 
 const LogoContainer = styled.div`
-	inset: calc(50% - 4rem) auto auto 1rem;
+	top: calc(50% - 4rem);
+	left: 1rem;
 	@media (min-width: 640px) {
-		inset: 50% auto auto calc(50% - 5rem);
+		top: 50%;
+		left: calc(50% - 5rem);
 	}
 	${tw`
 		absolute
