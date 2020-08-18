@@ -1,3 +1,3 @@
-import { Page } from "./Page";
+import { Page, PageTitle, PageHeader } from "./Page";
 
-export { Page };
+export { Page, PageTitle, PageHeader };

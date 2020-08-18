@@ -2,16 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
+import { Page, PageTitle, PageHeader } from "../components/styled/Page";
 import { SkillsCategoriesList } from "../components/business/SkillsCategoriesList";
 
 const Skills = ({ data }) => (
-	<>
-		<h1>Skills</h1>
+	<Page>
+		<PageHeader withBackButton>
+			<PageTitle>Skills</PageTitle>
+		</PageHeader>
 		<SkillsCategoriesList
 			skillsCategories={data.allSkills.nodes}
 			withHeader={false}
 		/>
-	</>
+	</Page>
 );
 
 Skills.propTypes = {
