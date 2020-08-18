@@ -11,7 +11,7 @@ export const LeadPosition = Object.freeze({
 });
 
 const CardBackground = styled.div`
-	${tw`bg-white rounded-lg flex flex-row m-4 shadow-flat-r`}
+	${tw`bg-white rounded-lg flex flex-row shadow-flat-r`}
 `;
 
 const CardLead = styled.div`
