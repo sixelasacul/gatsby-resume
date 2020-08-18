@@ -1,3 +1,3 @@
-import { UnderlinedLink } from "./UnderlinedLink";
+import { UnderlinedLink, UnderlinedExternalLink } from "./UnderlinedLink";
 
-export { UnderlinedLink };
+export { UnderlinedLink, UnderlinedExternalLink };

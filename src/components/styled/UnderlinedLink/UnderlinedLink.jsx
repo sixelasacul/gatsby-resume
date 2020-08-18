@@ -1,18 +1,18 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import tw from "twin.macro";
 import { Link } from "gatsby";
 
 import { withChildren } from "../../shapes/withChildren";
 
 const FlexContainer = styled.div`
-	${tw`flex flex-row`}
+	${tw`flex flex-row inline-block`}
 `;
 
-const StyledLink = styled(Link)`
+const styles = css`
 	&::after {
 		content: "";
-		width: 66%;
+		width: calc(66% - 0.25rem);
 		${tw`border border-solid border-blue-500 ml-1`}
 		transition-duration: 200ms;
 		transition-name: retractOnMouseOut;
@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
 	}
 	&:hover::after,
 	&:focus::after {
-		width: 100%;
+		width: calc(100% - 0.25rem);
 		${tw`border-blue-400`}
 		transition-duration: 200ms;
 		transition-name: extendOnMouseOn;
@@ -28,21 +28,21 @@ const StyledLink = styled(Link)`
 	}
 	@keyframes extendOnMouseOn {
 		from {
-			width: 66%;
+			width: calc(66% - 0.25rem);
 			${tw`border-blue-500`}
 		}
 		to {
-			width: 100%;
+			width: calc(100% - 0.25rem);
 			${tw`border-blue-400`}
 		}
 	}
 	@keyframes retractOnMouseOut {
 		from {
-			width: 100%;
+			width: calc(100% - 0.25rem);
 			${tw`border-blue-400`}
 		}
 		to {
-			width: 66%;
+			width: calc(66% - 0.25rem);
 			${tw`border-blue-500`}
 		}
 	}
@@ -52,8 +52,25 @@ const StyledLink = styled(Link)`
 
 export const UnderlinedLink = ({ children, ...otherProps }) => (
 	<FlexContainer>
-		<StyledLink {...otherProps}>{children}</StyledLink>
+		<Link css={styles} {...otherProps}>
+			{children}
+		</Link>
 	</FlexContainer>
 );
 
 UnderlinedLink.propTypes = withChildren;
+
+export const UnderlinedExternalLink = ({ children, ...otherProps }) => (
+	<FlexContainer>
+		<a
+			css={styles}
+			target="_blank"
+			rel="noreferrer noopener"
+			{...otherProps}
+		>
+			{children}
+		</a>
+	</FlexContainer>
+);
+
+UnderlinedExternalLink.propTypes = withChildren;
