@@ -12,7 +12,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint './**/*.{jsx,js}'"
+    "lint": "eslint './**/*.{jsx,js}'",
+    "ci": "yarn install --frozen-lockfile"
   },
   "dependencies": {
     "gatsby": "^2.19.7",

@@ -1,0 +1,27 @@
+{
+    "ci": {
+      "collect": {
+        "isSinglePageApplication": true,
+        "staticDistDir": "./public/",
+        "url": [
+          "http://localhost",
+          "http://localhost/experiences",
+          "http://localhost/experiences/altereo",
+          "http://localhost/experiences/e-partenaire",
+          "http://localhost/experiences/exakis-1",
+          "http://localhost/experiences/exakis-2",
+          "http://localhost/experiences/toast-1",
+          "http://localhost/experiences/toast-2",
+          "http://localhost/experiences/toast-3",
+          "http://localhost/educations",
+          "http://localhost/educations/cesi",
+          "http://localhost/educations/vdd",
+          "http://localhost/skills"
+        ],
+        "numberOfRuns": 2
+      },
+      "assert": {
+        "preset": "lighthouse:no-pwa"
+      }
+    }
+  }
