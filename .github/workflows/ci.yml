@@ -18,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: npm ci && npm install -g @lhci/cli@0.4.x
-      - run: npm run clean && npm run build
+      - run: yarn ci && yarn global add @lhci/cli@0.4.x
+      - run: echo $PATH
+      - run: yarn clean && yarn build
       - run: lhci autorun
