@@ -21,13 +21,7 @@ jobs:
       - name: Install dependencies
         run: yarn ci
       - name: Linting CSS
-        run: yarn lint:css:report
-      - name: Upload report
-        if: ${{ failure() }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: report
-          path: .report/lint-report-css.txt
+        run: yarn lint:css
   lint-js:
     runs-on: ubuntu-latest
     steps:
@@ -36,10 +30,4 @@ jobs:
       - name: Install dependencies
         run: yarn ci
       - name: Linting JS
-        run: yarn lint:js:report
-      - name: Upload report
-        if: ${{ failure() }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: report
-          path: .report/lint-report-js.txt
+        run: yarn lint:js

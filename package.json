@@ -13,9 +13,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint:js": "eslint './**/*.{jsx,js}'",
-    "lint:js:report": "eslint './**/*.{jsx,js}' -o .report/lint-report-js.txt",
     "lint:css": "stylelint './**/*.jsx'",
-    "lint:css:report": "stylelint './**/*.jsx' -o .report/lint-report-css.txt",
     "lint": "yarn lint:css && yarn lint:js",
     "ci": "yarn install --frozen-lockfile"
   },

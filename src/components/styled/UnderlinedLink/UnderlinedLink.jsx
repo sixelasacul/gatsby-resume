@@ -17,7 +17,7 @@ const styles = css`
 	}
 	&:hover::after,
 	&:focus::after {
-		width: calc(100% - 0.25rem)
+		width: calc(100% - 0.25rem);
 		transition-property: border-color, width;
 		transition-duration: 200ms;
 		transition-timing-function: ease-in;
@@ -27,7 +27,7 @@ const styles = css`
 
 export const UnderlinedLink = ({ children, ...otherProps }) => (
 	<Link css={styles} {...otherProps}>
-		{childre}
+		{children}
 	</Link>
 );
 
