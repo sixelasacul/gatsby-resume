@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  lint-css:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: yarn ci
+      - name: Linting CSS
+        run: yarn lint:css:report
+      - name: Upload report
+        uses: actions/upload-artifact@v2
+        with:
+          name: report
+          path: .report/lint-report-css.txt
+  lint-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: yarn ci
+      - name: Linting JS
+        run: yarn lint:js:report
+      - name: Upload report
+        uses: actions/upload-artifact@v2
+        with:
+          name: report
+          path: .report/lint-report-js.txt
