@@ -23,6 +23,7 @@ jobs:
       - name: Linting CSS
         run: yarn lint:css:report
       - name: Upload report
+        if: ${{ failure() }}
         uses: actions/upload-artifact@v2
         with:
           name: report
@@ -37,6 +38,7 @@ jobs:
       - name: Linting JS
         run: yarn lint:js:report
       - name: Upload report
+        if: ${{ failure() }}
         uses: actions/upload-artifact@v2
         with:
           name: report
