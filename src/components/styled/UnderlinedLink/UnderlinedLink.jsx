@@ -10,38 +10,18 @@ const styles = css`
 	&::after {
 		content: "";
 		width: calc(66% - 0.25rem);
+		transition-property: border-color, width;
 		transition-duration: 200ms;
-		transition-name: retractOnMouseOut;
 		transition-timing-function: ease-out;
 		${tw`border border-solid border-blue-500 ml-1`}
 	}
 	&:hover::after,
 	&:focus::after {
 		width: calc(100% - 0.25rem);
+		transition-property: border-color, width;
 		transition-duration: 200ms;
-		transition-name: extendOnMouseOn;
 		transition-timing-function: ease-in;
 		${tw`border-blue-400`}
-	}
-	@keyframes extendOnMouseOn {
-		from {
-			width: calc(66% - 0.25rem);
-			${tw`border-blue-500`}
-		}
-		to {
-			width: calc(100% - 0.25rem);
-			${tw`border-blue-400`}
-		}
-	}
-	@keyframes retractOnMouseOut {
-		from {
-			width: calc(100% - 0.25rem);
-			${tw`border-blue-400`}
-		}
-		to {
-			width: calc(66% - 0.25rem);
-			${tw`border-blue-500`}
-		}
 	}
 `;
 

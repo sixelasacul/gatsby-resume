@@ -12,7 +12,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint './**/*.{jsx,js}'"
+    "lint:js": "eslint './**/*.{jsx,js}'",
+    "lint:css": "stylelint './**/*.jsx'",
+    "lint": "yarn lint:css && yarn lint:js",
+    "ci": "yarn install --frozen-lockfile"
   },
   "dependencies": {
     "gatsby": "^2.19.7",
@@ -34,6 +37,10 @@
     "gatsby-plugin-styled-components": "^3.3.10",
     "prettier": "^2.0.4",
     "styled-components": "^5.1.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "tailwindcss": "^1.6.2",
     "twin.macro": "^1.7.0"
   },
