@@ -10,10 +10,7 @@ const Skills = ({ data }) => (
 		<PageHeader withBackButton>
 			<PageTitle>Skills</PageTitle>
 		</PageHeader>
-		<SkillsCategoriesList
-			skillsCategories={data.allSkills.nodes}
-			withHeader={false}
-		/>
+		<SkillsCategoriesList skillsCategories={data.allSkills.nodes} />
 	</Page>
 );
 

@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { Link } from "gatsby";
+import { navigate } from "@reach/router";
 
 import { withChildren } from "../../shapes/withChildren";
 import { UnderlinedExternalLink } from "../UnderlinedLink";
+import { SectionSeparator } from "../Separators";
 
 const Container = styled.div`
 	${tw`container mx-auto p-2 md:px-16 min-h-screen`}
@@ -23,14 +24,16 @@ const HeaderChild = styled.div`
 	flex-basis: 20%;
 `;
 
-const BackButton = styled(Link)`
+const BackButton = styled.button`
 	${tw`text-blue-700 text-4xl leading-none p-2 font-thin`}
 `;
 
 export const PageHeader = ({ children, withBackButton = false }) => (
 	<HeaderFlex>
 		<HeaderChild>
-			{withBackButton && <BackButton to="/">{"<"}</BackButton>}
+			{withBackButton && (
+				<BackButton onClick={() => navigate(-1)}>{"<"}</BackButton>
+			)}
 		</HeaderChild>
 		{children}
 		<HeaderChild />
@@ -63,6 +66,7 @@ export const Page = ({ children }) => (
 	<Background>
 		<Container>
 			{children}
+			<SectionSeparator />
 			<Footer>
 				Made with{" "}
 				<GrayLink href="https://www.gatsbyjs.com/">Gatsby</GrayLink> and{" "}

@@ -10,10 +10,7 @@ const Experiences = ({ data }) => (
 		<PageHeader withBackButton>
 			<PageTitle>Experiences</PageTitle>
 		</PageHeader>
-		<ExperiencesList
-			experiences={data.allExperiences.nodes}
-			withHeader={false}
-		/>
+		<ExperiencesList experiences={data.allExperiences.nodes} />
 	</Page>
 );
 

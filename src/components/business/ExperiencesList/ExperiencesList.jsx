@@ -5,8 +5,9 @@ import { Experience } from "../Experience";
 import { sortByStartDate } from "../../../utils/sorts";
 import { ItemSeparator } from "../../styled/Separators";
 import { Section } from "../../styled/Section";
+import { Card } from "../../styled/Card";
 
-export const ExperiencesList = ({ experiences, withHeader = true }) => (
+export const ExperiencesList = ({ experiences, withHeader = false }) => (
 	<Section
 		withHeader={withHeader}
 		sectionTitle="Experiences"
@@ -14,7 +15,9 @@ export const ExperiencesList = ({ experiences, withHeader = true }) => (
 	>
 		{experiences.sort(sortByStartDate).map((experience, index) => (
 			<div key={experience.slug}>
-				<Experience experience={experience} />
+				<Card>
+					<Experience experience={experience} />
+				</Card>
 				{index < experiences.length - 1 && <ItemSeparator />}
 			</div>
 		))}

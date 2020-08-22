@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
+import { Education as EducationShape } from "../../shapes/Education";
 import { prettyPrintDate } from "../../../utils/dates";
-import { Card } from "../../styled/Card";
 
 export const Education = ({ education, fullView = false }) => {
 	const {
@@ -19,7 +19,7 @@ export const Education = ({ education, fullView = false }) => {
 	} = education;
 
 	return (
-		<Card>
+		<>
 			<h1>{qualification}</h1>
 			<h2>
 				<a href={link}>{name}</a>
@@ -29,22 +29,12 @@ export const Education = ({ education, fullView = false }) => {
 				{prettyPrintDate(startDate)} - {prettyPrintDate(endDate)}
 			</h6>
 			<p>{fullView ? description : shortDescription}</p>
-			{!fullView && <Link to={`/educations/${slug}`}>More</Link>}
-		</Card>
+			{!fullView && <Link to={`/educations/${slug}/`}>More</Link>}
+		</>
 	);
 };
 
 Education.propTypes = {
 	fullView: PropTypes.bool,
-	education: PropTypes.shape({
-		slug: PropTypes.string.isRequired,
-		name: PropTypes.string.isRequired,
-		type: PropTypes.string.isRequired,
-		qualification: PropTypes.string.isRequired,
-		link: PropTypes.string.isRequired,
-		startDate: PropTypes.string.isRequired,
-		endDate: PropTypes.string.isRequired,
-		description: PropTypes.string,
-		shortDescription: PropTypes.string
-	}).isRequired
+	education: EducationShape.isRequired
 };
