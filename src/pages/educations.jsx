@@ -2,14 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
-import { Page, PageTitle, PageHeader } from "../components/styled/Page";
+import { Page } from "../components/styled/Page";
 import { EducationsList } from "../components/business/EducationsList";
 
 const Educations = ({ data }) => (
-	<Page>
-		<PageHeader withBackButton>
-			<PageTitle>Educations</PageTitle>
-		</PageHeader>
+	<Page withBreadcrumbs>
 		<EducationsList
 			educations={data.allEducations.nodes}
 			withHeader={false}

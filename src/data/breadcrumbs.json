@@ -1,0 +1,15 @@
+[
+	{ "relativePath": "/", "name": "Home" },
+	{ "relativePath": "experiences", "name": "Experiences" },
+	{ "relativePath": "e-partenaire", "name": "E-partenaire" },
+	{ "relativePath": "altereo", "name": "Altereo" },
+	{ "relativePath": "exakis-1", "name": "Exakis Nelite" },
+	{ "relativePath": "exakis-2", "name": "Exakis Nelite" },
+	{ "relativePath": "toast-1", "name": "Toast Inc." },
+	{ "relativePath": "toast-2", "name": "Toast Inc." },
+	{ "relativePath": "toast-3", "name": "Toast Inc." },
+	{ "relativePath": "educations", "name": "Educations" },
+	{ "relativePath": "vdd", "name": "Val de Durance" },
+	{ "relativePath": "cesi", "name": "CESI Ingénieurs" },
+	{ "relativePath": "skills", "name": "Skills" }
+]
