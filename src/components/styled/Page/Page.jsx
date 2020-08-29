@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { navigate } from "@reach/router";
 
 import { withChildren } from "../../shapes/withChildren";
 import { UnderlinedExternalLink } from "../UnderlinedLink";
+import { Breadcrumbs } from "../../business/Breadcrumbs";
 import { SectionSeparator } from "../Separators";
 
 const Container = styled.div`
@@ -16,35 +16,8 @@ const Background = styled.div`
 	${tw`bg-gray-100`}
 `;
 
-const HeaderFlex = styled.div`
-	${tw`mt-2 pt-2 mb-4 pb-4 flex flex-row justify-between items-center sticky top-0 bg-gray-100`}
-`;
-
-const HeaderChild = styled.div`
-	flex-basis: 20%;
-`;
-
-const BackButton = styled.button`
-	${tw`text-blue-700 text-4xl leading-none p-2 font-thin`}
-`;
-
-export const PageHeader = ({ children, withBackButton = false }) => (
-	<HeaderFlex>
-		<HeaderChild>
-			{withBackButton && (
-				<BackButton onClick={() => navigate(-1)}>{"<"}</BackButton>
-			)}
-		</HeaderChild>
-		{children}
-		<HeaderChild />
-	</HeaderFlex>
-);
-
-PageHeader.propTypes = { ...withChildren, withBackButton: PropTypes.bool };
-
-export const PageTitle = styled.h1`
-	flex-basis: 50%;
-	${tw`text-3xl text-center text-blue-700 font-thin`}
+const StickyHeader = styled.div`
+	${tw`mt-2 pt-2 mb-4 pb-4 sticky top-0 bg-gray-100`}
 `;
 
 const Footer = styled.p`
@@ -62,9 +35,14 @@ const GrayLink = styled(UnderlinedExternalLink)`
 	}
 `;
 
-export const Page = ({ children }) => (
+export const Page = ({ children, withBreadcrumbs = false }) => (
 	<Background>
 		<Container>
+			{withBreadcrumbs && (
+				<StickyHeader>
+					<Breadcrumbs />
+				</StickyHeader>
+			)}
 			{children}
 			<SectionSeparator />
 			<Footer>
@@ -81,4 +59,4 @@ export const Page = ({ children }) => (
 	</Background>
 );
 
-Page.propTypes = withChildren;
+Page.propTypes = { ...withChildren, withBreadcrumbs: PropTypes.bool };

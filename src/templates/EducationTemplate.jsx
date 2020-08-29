@@ -2,16 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
-import { Page, PageHeader, PageTitle } from "../components/styled/Page";
+import { Page } from "../components/styled/Page";
 import { Individual } from "../components/styled/Individual";
 import { Education } from "../components/business/Education";
 import { Education as EducationShape } from "../components/shapes/Education";
 
 const EducationTemplate = ({ data }) => (
-	<Page>
-		<PageHeader withBackButton>
-			<PageTitle>{data.educations.name}</PageTitle>
-		</PageHeader>
+	<Page withBreadcrumbs>
 		<Individual>
 			<Education education={data.educations} fullView />
 		</Individual>
