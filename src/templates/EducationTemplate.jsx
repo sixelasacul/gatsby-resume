@@ -24,6 +24,7 @@ EducationTemplate.propTypes = {
 export const query = graphql`
 	query($id: String!) {
 		educations(id: { eq: $id }) {
+			slug
 			name
 			type
 			qualification

@@ -24,6 +24,7 @@ ExperienceTemplate.propTypes = {
 export const query = graphql`
 	query($id: String!) {
 		experiences(id: { eq: $id }) {
+			slug
 			name
 			type
 			startDate
