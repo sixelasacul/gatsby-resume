@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const Background = styled.div`
-	${tw`bg--no-op-gray-100`}
+	${tw`bg-no-op-gray-100`}
 `;
 
 const StickyHeader = styled.div`
