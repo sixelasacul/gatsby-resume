@@ -23,7 +23,7 @@ const LogoContainer = styled.div`
 	}
 	${tw`
 		absolute
-        bg-white rounded-full w-32 h-32 p-2
+        bg-no-op-white rounded-full w-32 h-32 p-2
         sm:shadow-flat-r sm:w-40 sm:h-40 sm:p-4
     `};
 `;
@@ -35,7 +35,7 @@ const Logo = styled(Img)`
 const Background = styled.div`
 	min-height: 10rem;
 	${tw`
-		bg-blue-500 shadow-flat-r rounded-lg relative
+		bg-no-op-blue-500 shadow-flat-r rounded-lg relative
 		flex p-4 text-gray-100 flex-col mb-10 justify-start items-end
 		sm:flex-row sm:mb-24 sm:items-start
 	`}

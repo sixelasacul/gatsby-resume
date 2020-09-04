@@ -12,11 +12,11 @@ const Container = styled.div`
 `;
 
 const Background = styled.div`
-	${tw`bg-gray-100`}
+	${tw`bg--no-op-gray-100`}
 `;
 
 const StickyHeader = styled.div`
-	${tw`mt-2 pt-2 mb-4 pb-4 sticky top-0 bg-gray-100`}
+	${tw`mt-2 pt-2 mb-4 pb-4 sticky top-0 bg-no-op-gray-100`}
 `;
 
 const Footer = styled.p`

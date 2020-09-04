@@ -3,6 +3,6 @@ import tw from "twin.macro";
 
 export const BaseStyles = createGlobalStyle`
     html {
-        ${tw`font-sans bg-gray-100`}
+        ${tw`font-sans bg-no-op-gray-100`}
     }
 `;
