@@ -11,7 +11,7 @@ const SectionTitle = styled.h2`
 `;
 
 const SectionHeader = styled.div`
-	${tw`sticky top-0 bg-gray-100 py-2 px-8 rounded-b-lg mb-4`}
+	${tw`sticky top-0 bg-no-op-gray-100 py-2 px-8 rounded-b-lg mb-4`}
 `;
 
 const SectionSeparator = styled.hr`

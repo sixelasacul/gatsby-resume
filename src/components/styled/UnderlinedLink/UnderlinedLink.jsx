@@ -13,7 +13,7 @@ const styles = css`
 		transition-property: border-color, width;
 		transition-duration: 200ms;
 		transition-timing-function: ease-out;
-		${tw`border border-solid border-blue-500 ml-1`}
+		${tw`border border-solid border-no-op-blue-500 border-blue-500 ml-1`}
 	}
 	&:hover::after,
 	&:focus::after {
@@ -21,7 +21,7 @@ const styles = css`
 		transition-property: border-color, width;
 		transition-duration: 200ms;
 		transition-timing-function: ease-in;
-		${tw`border-blue-400`}
+		${tw`border-no-op-blue-400 border-blue-400`}
 	}
 `;
 
