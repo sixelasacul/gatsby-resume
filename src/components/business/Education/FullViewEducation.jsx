@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "gatsby";
 
+import { TitleSection } from "../../styled/Individual";
 import { Education as EducationShape } from "../../shapes/Education";
 import { prettyPrintDate } from "../../../utils/dates";
 
-export const Education = ({ education }) => {
+export const FullViewEducation = ({ education }) => {
 	const {
-		slug,
 		name,
 		type,
 		qualification,
@@ -18,20 +17,15 @@ export const Education = ({ education }) => {
 
 	return (
 		<>
-			<h1>{qualification}</h1>
-			<h2>
-				<a href={link}>{name}</a>
-			</h2>
-			<h3>{type}</h3>
+			<TitleSection title={qualification} location={name} link={link} />
 			<h6>
 				{prettyPrintDate(startDate)} - {prettyPrintDate(endDate)}
 			</h6>
 			<p>{description}</p>
-			<Link to={`/educations/${slug}/`}>More</Link>
 		</>
 	);
 };
 
-Education.propTypes = {
+FullViewEducation.propTypes = {
 	education: EducationShape.isRequired
 };

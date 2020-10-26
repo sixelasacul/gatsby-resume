@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { Experience as ExperienceShape } from "../../shapes/Experience";
 import { prettyPrintDate } from "../../../utils/dates";
 
-export const Experience = ({ experience, fullView = false }) => {
+export const Experience = ({ experience }) => {
 	const {
 		slug,
 		name,
@@ -13,8 +13,7 @@ export const Experience = ({ experience, fullView = false }) => {
 		link,
 		startDate,
 		endDate,
-		description,
-		shortDescription
+		description
 	} = experience;
 
 	return (
@@ -26,8 +25,8 @@ export const Experience = ({ experience, fullView = false }) => {
 			<h6>
 				{prettyPrintDate(startDate)} - {prettyPrintDate(endDate)}
 			</h6>
-			<p>{fullView ? description : shortDescription}</p>
-			{!fullView && <Link to={`experiences/${slug}/`}>More</Link>}
+			<p>{description}</p>
+			<Link to={`experiences/${slug}/`}>More</Link>
 		</>
 	);
 };

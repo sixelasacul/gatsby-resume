@@ -4,13 +4,13 @@ import { graphql } from "gatsby";
 
 import { Page } from "../components/styled/Page";
 import { Individual } from "../components/styled/Individual";
-import { Experience } from "../components/business/Experience";
+import { FullViewExperience } from "../components/business/Experience";
 import { Experience as ExperienceShape } from "../components/shapes/Experience";
 
 const ExperienceTemplate = ({ data }) => (
 	<Page withBreadcrumbs>
 		<Individual>
-			<Experience experience={data.experiences} fullView />
+			<FullViewExperience experience={data.experiences} fullView />
 		</Individual>
 	</Page>
 );

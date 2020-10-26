@@ -1,3 +1,3 @@
-import { Individual } from "./Individual";
+import { Individual, TitleSection } from "./Individual";
 
-export { Individual };
+export { Individual, TitleSection };
