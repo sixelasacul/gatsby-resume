@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import { Page } from "../components/styled/Page";
-import { Individual } from "../components/styled/Individual";
+import { LargeCard } from "../components/styled/Individual";
 import { FullViewEducation } from "../components/business/Education";
 import { Education as EducationShape } from "../components/shapes/Education";
 
 const EducationTemplate = ({ data }) => (
 	<Page withBreadcrumbs>
-		<Individual>
+		<LargeCard>
 			<FullViewEducation education={data.educations} />
-		</Individual>
+		</LargeCard>
 	</Page>
 );
 

@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import { Page } from "../components/styled/Page";
-import { Individual } from "../components/styled/Individual";
+import { LargeCard } from "../components/styled/Individual";
 import { FullViewExperience } from "../components/business/Experience";
 import { Experience as ExperienceShape } from "../components/shapes/Experience";
 
 const ExperienceTemplate = ({ data }) => (
 	<Page withBreadcrumbs>
-		<Individual>
+		<LargeCard>
 			<FullViewExperience experience={data.experiences} fullView />
-		</Individual>
+		</LargeCard>
 	</Page>
 );
 

@@ -1,8 +1,8 @@
 import React from "react";
 
-import { TitleSection } from "../../styled/Individual";
+import { HeadSection } from "../../styled/Individual";
 import { Education as EducationShape } from "../../shapes/Education";
-import { prettyPrintDate } from "../../../utils/dates";
+import { prettyPrintDate, prettyPrintTimespan } from "../../../utils/dates";
 
 export const FullViewEducation = ({ education }) => {
 	const {
@@ -17,10 +17,18 @@ export const FullViewEducation = ({ education }) => {
 
 	return (
 		<>
-			<TitleSection title={qualification} location={name} link={link} />
+			<HeadSection
+				title={qualification}
+				location={name}
+				link={link}
+				locationType={type}
+			/>
+
 			<h6>
-				{prettyPrintDate(startDate)} - {prettyPrintDate(endDate)}
+				{prettyPrintDate(startDate)} - {prettyPrintDate(endDate)} (
+				{prettyPrintTimespan(startDate, endDate)})
 			</h6>
+
 			<p>{description}</p>
 		</>
 	);
