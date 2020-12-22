@@ -5,7 +5,8 @@ import tw from "twin.macro";
 
 import { withChildren } from "../../shapes/withChildren";
 import { UnderlinedExternalLink } from "../UnderlinedLink";
-import { Breadcrumbs } from "../../business/Breadcrumbs/Breadcrumbs";
+import { Breadcrumbs } from "../../business/Breadcrumbs";
+import { SectionSeparator } from "../Separators";
 
 const Container = styled.div`
 	${tw`container mx-auto p-2 md:px-16 min-h-screen`}
@@ -43,6 +44,7 @@ export const Page = ({ children, withBreadcrumbs = false }) => (
 				</StickyHeader>
 			)}
 			{children}
+			<SectionSeparator />
 			<Footer>
 				Made with{" "}
 				<GrayLink href="https://www.gatsbyjs.com/">Gatsby</GrayLink> and{" "}

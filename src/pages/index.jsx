@@ -7,6 +7,7 @@ import { ExperiencesList } from "../components/business/ExperiencesList";
 import { SkillsCategoriesList } from "../components/business/SkillsCategoriesList";
 import { EducationsList } from "../components/business/EducationsList";
 import { Page } from "../components/styled/Page";
+import { SectionSeparator } from "../components/styled/Separators";
 
 const Home = ({ data }) => {
 	const { information, allExperiences, allSkills, allEducations } = data;
@@ -16,9 +17,16 @@ const Home = ({ data }) => {
 				information={information}
 				profilePic={data.file.childImageSharp.fluid}
 			/>
-			<ExperiencesList experiences={allExperiences.nodes} />
-			<SkillsCategoriesList skillsCategories={allSkills.nodes} />
-			<EducationsList educations={allEducations.nodes} />
+			<ExperiencesList withHeader experiences={allExperiences.nodes} />
+
+			<SectionSeparator />
+			<SkillsCategoriesList
+				withHeader
+				skillsCategories={allSkills.nodes}
+			/>
+
+			<SectionSeparator />
+			<EducationsList withHeader educations={allEducations.nodes} />
 		</Page>
 	);
 };

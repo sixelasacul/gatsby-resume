@@ -9,18 +9,18 @@
         "qualification": "BAC SSI option ISN",
         "keywords": [],
         "shortDescription": "ddd",
-        "description": "ddddddddddd\\nddddddd"
+        "description": "ddddddddddd\nddddddd"
     },
     {
         "slug": "cesi",
         "name": "CESI Ingénieurs",
-        "type": "Stage",
+        "type": "Études supérieures",
         "startDate": "01/09/2015",
-        "endDate": "",
+        "endDate": "01/09/2020",
         "link": "https://ecole-ingenieurs.cesi.fr/",
         "qualification": "Ingénieur spécialité informatique",
         "keywords": [],
         "shortDescription": "ddd",
-        "description": "ddddddddddd\\nddddddd"
+        "description": "ddddddddddd\nddddddd"
     }
 ]

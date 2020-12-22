@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
+import { Experience as ExperienceShape } from "../../shapes/Experience";
 import { prettyPrintDate } from "../../../utils/dates";
-import { Card } from "../../styled/Card";
 
-export const Experience = ({ experience, fullView = false }) => {
+export const Experience = ({ experience }) => {
 	const {
 		slug,
 		name,
@@ -13,12 +13,11 @@ export const Experience = ({ experience, fullView = false }) => {
 		link,
 		startDate,
 		endDate,
-		description,
-		shortDescription
+		description
 	} = experience;
 
 	return (
-		<Card>
+		<>
 			<h1>
 				<a href={link}>{name}</a>
 			</h1>
@@ -26,22 +25,13 @@ export const Experience = ({ experience, fullView = false }) => {
 			<h6>
 				{prettyPrintDate(startDate)} - {prettyPrintDate(endDate)}
 			</h6>
-			<p>{fullView ? description : shortDescription}</p>
-			{!fullView && <Link to={`/experiences/${slug}`}>More</Link>}
-		</Card>
+			<p>{description}</p>
+			<Link to={`experiences/${slug}/`}>More</Link>
+		</>
 	);
 };
 
 Experience.propTypes = {
 	fullView: PropTypes.bool,
-	experience: PropTypes.shape({
-		slug: PropTypes.string.isRequired,
-		name: PropTypes.string.isRequired,
-		type: PropTypes.string.isRequired,
-		link: PropTypes.string.isRequired,
-		startDate: PropTypes.string.isRequired,
-		endDate: PropTypes.string.isRequired,
-		description: PropTypes.string,
-		shortDescription: PropTypes.string
-	}).isRequired
+	experience: ExperienceShape.isRequired
 };

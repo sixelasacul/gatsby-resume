@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 import { SkillsCategory } from "../SkillsCategory";
 import { ItemSeparator } from "../../styled/Separators";
 import { Section } from "../../styled/Section";
+import { Card } from "../../styled/Card";
 
 export const SkillsCategoriesList = ({
 	skillsCategories,
-	withHeader = true
+	withHeader = false
 }) => (
 	<Section
 		withHeader={withHeader}
@@ -16,7 +17,12 @@ export const SkillsCategoriesList = ({
 	>
 		{skillsCategories.map((item, index) => (
 			<div key={item.category}>
-				<SkillsCategory category={item.category} skills={item.skills} />
+				<Card>
+					<SkillsCategory
+						category={item.category}
+						skills={item.skills}
+					/>
+				</Card>
 				{index < skillsCategories.length - 1 && <ItemSeparator />}
 			</div>
 		))}

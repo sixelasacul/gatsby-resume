@@ -5,8 +5,9 @@ import { Education } from "../Education";
 import { sortByStartDate } from "../../../utils/sorts";
 import { ItemSeparator } from "../../styled/Separators";
 import { Section } from "../../styled/Section";
+import { Card } from "../../styled/Card";
 
-export const EducationsList = ({ educations, withHeader = true }) => (
+export const EducationsList = ({ educations, withHeader = false }) => (
 	<Section
 		withHeader={withHeader}
 		sectionTitle="Educations"
@@ -14,7 +15,9 @@ export const EducationsList = ({ educations, withHeader = true }) => (
 	>
 		{educations.sort(sortByStartDate).map((education, index) => (
 			<div key={education.slug}>
-				<Education education={education} />
+				<Card>
+					<Education education={education} />
+				</Card>
 				{index < educations.length - 1 && <ItemSeparator />}
 			</div>
 		))}
